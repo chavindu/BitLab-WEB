@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, ScrollRestoration } from 'react-router-dom'; // <-- Import ScrollRestoration
 import Layout from './components/layout/Layout';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
@@ -42,45 +42,48 @@ function App() {
   };
 
   return (
-    <Routes location={location}>
-      {/* Admin Routes */}
-      <Route path="/admin/login" element={<AdminLogin />} />
-      <Route
-        path="/admin/*"
-        element={
-          <ProtectedRoute>
-            <AdminLayout>
-              <Routes>
-                <Route index element={<AdminDashboard />} />
-                <Route path="services" element={<AdminServices />} />
-                <Route path="portfolio" element={<AdminPortfolio />} />
-                <Route path="team" element={<AdminTeam />} />
-                <Route path="metrics" element={<AdminMetrics />} />
-                <Route path="tech-stack" element={<AdminTechStack />} />
-                <Route path="contact" element={<AdminContact />} />
-              </Routes>
-            </AdminLayout>
-          </ProtectedRoute>
-        }
-      />
+    <> {/* Use a fragment to wrap ScrollRestoration and Routes */}
+      <ScrollRestoration /> {/* <-- Add this component here */}
+      <Routes location={location}> {/* You can keep location prop if needed for specific animation scenarios, but ScrollRestoration handles scroll */}
+        {/* Admin Routes */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route
+          path="/admin/*"
+          element={
+            <ProtectedRoute>
+              <AdminLayout>
+                <Routes>
+                  <Route index element={<AdminDashboard />} />
+                  <Route path="services" element={<AdminServices />} />
+                  <Route path="portfolio" element={<AdminPortfolio />} />
+                  <Route path="team" element={<AdminTeam />} />
+                  <Route path="metrics" element={<AdminMetrics />} />
+                  <Route path="tech-stack" element={<AdminTechStack />} />
+                  <Route path="contact" element={<AdminContact />} />
+                </Routes>
+              </AdminLayout>
+            </ProtectedRoute>
+          }
+        />
 
-      {/* Public Routes */}
-      <Route
-        path="/*"
-        element={
-          <Layout theme={theme} toggleTheme={toggleTheme}>
-            <Routes>
-              <Route index element={<HomePage />} />
-              <Route path="services" element={<ServicesPage />} />
-              <Route path="portfolio" element={<PortfolioPage />} />
-              <Route path="about" element={<AboutPage />} />
-              <Route path="contact" element={<ContactPage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </Layout>
-        }
-      />
-    </Routes>
+        {/* Public Routes */}
+        <Route
+          path="/*"
+          element={
+            <Layout theme={theme} toggleTheme={toggleTheme}>
+              <Routes>
+                <Route index element={<HomePage />} />
+                <Route path="services" element={<ServicesPage />} />
+                <Route path="portfolio" element={<PortfolioPage />} />
+                <Route path="about" element={<AboutPage />} />
+                <Route path="contact" element={<ContactPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </Layout>
+          }
+        />
+      </Routes>
+    </>
   );
 }
 
