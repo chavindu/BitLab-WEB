@@ -55,11 +55,11 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
   };
 
   const navLinks = [
-    { text: 'Home', path: '/#' },
-    { text: 'Services', path: '/services#' },
-    { text: 'Portfolio', path: '/portfolio#' },
-    { text: 'About', path: '/about#' },
-    { text: 'Contact', path: '/contact#' },
+    { text: 'Home', path: '/' },
+    { text: 'Services', path: '/services' },
+    { text: 'Portfolio', path: '/portfolio' },
+    { text: 'About', path: '/about' },
+    { text: 'Contact', path: '/contact' },
   ];
 
   return (
