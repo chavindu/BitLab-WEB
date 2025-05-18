@@ -17,7 +17,6 @@ import AdminTechStack from './pages/admin/AdminTechStack';
 import AdminContact from './pages/admin/AdminContact';
 import AdminLogin from './pages/admin/AdminLogin';
 import ProtectedRoute from './components/admin/ProtectedRoute';
-import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const location = useLocation();
