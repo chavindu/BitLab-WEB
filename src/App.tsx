@@ -43,9 +43,9 @@ function App() {
   };
 
   return (
-    <> {/* Use a fragment to wrap ScrollToTop and Routes */}
-      <ScrollToTop /> {/* <-- Add your custom component here */}
-      <Routes location={location}> {/* You can keep location prop if needed */}
+    <> 
+      <ScrollToTop /> 
+      <Routes location={location}> 
         {/* Admin Routes */}
         <Route path="/admin/login" element={<AdminLogin />} />
       <Route
