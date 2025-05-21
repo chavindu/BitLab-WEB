@@ -2,36 +2,22 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-
-const projects = [
-  {
-    id: 1,
-    title: "E-Commerce Platform",
-    category: "Web Development",
-    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  },
-  {
-    id: 2,
-    title: "Hospital Management System",
-    category: "Custom Application",
-    image: "https://images.pexels.com/photos/1170979/pexels-photo-1170979.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  },
-  {
-    id: 3,
-    title: "Restaurant Point of Sale",
-    category: "Software Development",
-    image: "https://images.pexels.com/photos/239975/pexels-photo-239975.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  },
-  {
-    id: 4,
-    title: "Legal Services Branding",
-    category: "Branding & Design",
-    image: "https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  }
-];
+import { usePortfolio } from '../../hooks/usePortfolio';
 
 const PortfolioPreview = () => {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const { portfolio, isLoading, error } = usePortfolio();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error loading portfolio: {error}</div>;
+  }
+
+  // Take only the first 4 projects for the preview
+  const previewProjects = portfolio.slice(0, 4);
 
   return (
     <section className="section">
@@ -44,7 +30,7 @@ const PortfolioPreview = () => {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {projects.map((project) => (
+          {previewProjects.map((project) => (
             <motion.div
               key={project.id}
               className="group relative overflow-hidden rounded-xl"
@@ -55,11 +41,9 @@ const PortfolioPreview = () => {
               onHoverStart={() => setHoveredId(project.id)}
               onHoverEnd={() => setHoveredId(null)}
             >
-              <div 
-                className="aspect-[4/3] overflow-hidden"
-              >
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
-                  src={project.image}
+                  src={project.image_url}
                   alt={project.title}
                   className={`h-full w-full object-cover transition-transform duration-700 ${
                     hoveredId === project.id ? 'scale-110' : 'scale-100'
