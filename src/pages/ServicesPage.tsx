@@ -1,32 +1,11 @@
 import React from 'react';
 import PageHeader from '../components/common/PageHeader';
 import ServiceCard from '../components/services/ServiceCard';
+import { coreServices, techStack } from '../components/services/ServiceData';
 import { motion } from 'framer-motion';
 import ContactCTA from '../components/home/ContactCTA';
-import { useServices } from '../hooks/useServices';
-import { useTechStack } from '../hooks/useTechStack';
 
 const ServicesPage: React.FC = () => {
-  const { services, isLoading: servicesLoading, error: servicesError } = useServices();
-  const { techStack, isLoading: techStackLoading, error: techStackError } = useTechStack();
-
-  if (servicesLoading || techStackLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (servicesError || techStackError) {
-    return <div>Error loading data</div>;
-  }
-
-  // Group tech stack by category
-  const groupedTechStack = techStack.reduce((acc, item) => {
-    if (!acc[item.category]) {
-      acc[item.category] = [];
-    }
-    acc[item.category].push(item.name);
-    return acc;
-  }, {} as Record<string, string[]>);
-
   return (
     <>
       <PageHeader 
@@ -46,10 +25,10 @@ const ServicesPage: React.FC = () => {
           </div>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => (
+            {coreServices.map((service, index) => (
               <div key={service.id} id={service.id}>
                 <ServiceCard
-                  icon={<span className="text-2xl text-primary-600">{service.icon}</span>}
+                  icon={service.icon}
                   title={service.title}
                   description={service.description}
                   features={service.features}
@@ -72,7 +51,7 @@ const ServicesPage: React.FC = () => {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {Object.entries(groupedTechStack).map(([category, technologies], index) => (
+            {Object.entries(techStack).map(([category, technologies], index) => (
               <motion.div 
                 key={category}
                 className="card"

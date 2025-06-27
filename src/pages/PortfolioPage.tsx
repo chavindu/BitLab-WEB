@@ -1,23 +1,11 @@
 import React from 'react';
 import PageHeader from '../components/common/PageHeader';
 import PortfolioGrid from '../components/portfolio/PortfolioGrid';
+import { portfolioProjects } from '../components/portfolio/PortfolioData';
 import ContactCTA from '../components/home/ContactCTA';
 import { motion } from 'framer-motion';
-import { usePortfolio } from '../hooks/usePortfolio';
-import { useMetrics } from '../hooks/useMetrics';
 
 const PortfolioPage: React.FC = () => {
-  const { portfolio, isLoading: portfolioLoading, error: portfolioError } = usePortfolio();
-  const { metrics, isLoading: metricsLoading, error: metricsError } = useMetrics();
-
-  if (portfolioLoading || metricsLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (portfolioError || metricsError) {
-    return <div>Error loading data</div>;
-  }
-
   return (
     <>
       <PageHeader 
@@ -35,7 +23,7 @@ const PortfolioPage: React.FC = () => {
             </p>
           </div>
 
-          <PortfolioGrid projects={portfolio} />
+          <PortfolioGrid projects={portfolioProjects} />
         </div>
       </section>
 
@@ -95,17 +83,34 @@ const PortfolioPage: React.FC = () => {
           </div>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {metrics.map((metric, index) => (
+            {[
+              {
+                value: "150+",
+                label: "Projects Completed",
+              },
+              {
+                value: "40+",
+                label: "Happy Clients",
+              },
+              {
+                value: "12+",
+                label: "Industries Served",
+              },
+              {
+                value: "8+",
+                label: "Years of Experience",
+              }
+            ].map((stat, index) => (
               <motion.div 
-                key={metric.id}
+                key={index}
                 className="card flex flex-col items-center text-center p-8"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <h3 className="mb-2 text-4xl font-bold text-primary-600">{metric.value}</h3>
-                <p className="text-gray-700 dark:text-gray-300">{metric.label}</p>
+                <h3 className="mb-2 text-4xl font-bold text-primary-600">{stat.value}</h3>
+                <p className="text-gray-700 dark:text-gray-300">{stat.label}</p>
               </motion.div>
             ))}
           </div>

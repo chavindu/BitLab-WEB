@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -21,15 +21,10 @@ const AdminServices = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
   const [currentService, setCurrentService] = useState<any>(null);
-  const [features, setFeatures] = useState<string[]>(['']);
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm<ServiceFormData>({
     resolver: zodResolver(serviceSchema),
   });
-
-  useEffect(() => {
-    fetchServices();
-  }, []);
 
   const fetchServices = async () => {
     try {
@@ -49,15 +44,10 @@ const AdminServices = () => {
 
   const onSubmit = async (data: ServiceFormData) => {
     try {
-      const serviceData = {
-        ...data,
-        features: features.filter(feature => feature.trim() !== '')
-      };
-
       if (isEditing && currentService) {
         const { error } = await supabase
           .from('services')
-          .update(serviceData)
+          .update(data)
           .eq('id', currentService.id);
 
         if (error) throw error;
@@ -65,7 +55,7 @@ const AdminServices = () => {
       } else {
         const { error } = await supabase
           .from('services')
-          .insert([serviceData]);
+          .insert([data]);
 
         if (error) throw error;
         toast.success('Service created successfully');
@@ -74,7 +64,6 @@ const AdminServices = () => {
       reset();
       setIsEditing(false);
       setCurrentService(null);
-      setFeatures(['']);
       fetchServices();
     } catch (error: any) {
       toast.error(error.message);
@@ -84,14 +73,7 @@ const AdminServices = () => {
   const handleEdit = (service: any) => {
     setCurrentService(service);
     setIsEditing(true);
-    setFeatures(service.features);
-    reset({
-      title: service.title,
-      description: service.description,
-      icon: service.icon,
-      category: service.category,
-      features: service.features,
-    });
+    reset(service);
   };
 
   const handleDelete = async (id: string) => {
@@ -110,24 +92,6 @@ const AdminServices = () => {
       toast.error(error.message);
     }
   };
-
-  const addFeature = () => {
-    setFeatures([...features, '']);
-  };
-
-  const removeFeature = (index: number) => {
-    setFeatures(features.filter((_, i) => i !== index));
-  };
-
-  const updateFeature = (index: number, value: string) => {
-    const newFeatures = [...features];
-    newFeatures[index] = value;
-    setFeatures(newFeatures);
-  };
-
-  if (isLoading) {
-    return <div className="p-6">Loading...</div>;
-  }
 
   return (
     <div className="p-6">
@@ -154,7 +118,6 @@ const AdminServices = () => {
               onClick={() => {
                 setIsEditing(false);
                 setCurrentService(null);
-                setFeatures(['']);
                 reset();
               }}
               className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
@@ -219,32 +182,7 @@ const AdminServices = () => {
             <div>
               <label className="form-label">Features</label>
               <div className="space-y-2">
-                {features.map((feature, index) => (
-                  <div key={index} className="flex gap-2">
-                    <input
-                      type="text"
-                      className="form-input"
-                      value={feature}
-                      onChange={(e) => updateFeature(index, e.target.value)}
-                      placeholder={`Feature ${index + 1}`}
-                    />
-                    <button
-                      type="button"
-                      onClick={() => removeFeature(index)}
-                      className="text-red-500 hover:text-red-700"
-                    >
-                      <X className="h-5 w-5" />
-                    </button>
-                  </div>
-                ))}
-                <button
-                  type="button"
-                  onClick={addFeature}
-                  className="btn btn-outline inline-flex items-center gap-2"
-                >
-                  <Plus className="h-4 w-4" />
-                  Add Feature
-                </button>
+                {/* Add feature input fields dynamically */}
               </div>
               {errors.features && (
                 <p className="mt-1 text-sm text-red-500">{errors.features.message}</p>
@@ -257,7 +195,6 @@ const AdminServices = () => {
                 onClick={() => {
                   setIsEditing(false);
                   setCurrentService(null);
-                  setFeatures(['']);
                   reset();
                 }}
                 className="btn btn-outline"
