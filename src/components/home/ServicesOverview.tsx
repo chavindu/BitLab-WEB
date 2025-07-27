@@ -72,7 +72,7 @@ const ServicesOverview = () => {
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <h2 className="section-title">Our Services</h2>
           <p className="section-subtitle">
-            We offer a comprehensive range of IT services to help your business thrive in the digital age.
+            We offer a comprehensive range of business solutions to help Sri Lankan entrepreneurs launch, grow, and succeed.
           </p>
         </div>
 

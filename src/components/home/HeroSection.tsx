@@ -18,7 +18,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Bringing Innovation Through Excellence
+            We Make It Happen
           </motion.h1>
           
           <motion.p 
@@ -27,8 +27,8 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            BitLab delivers cutting-edge IT solutions that transform businesses. 
-            From web development to enterprise systems, we build technology that works for you.
+            Your all-in-one business launch, growth, and success partner in Sri Lanka. 
+            We empower entrepreneurs with the tools, strategies, and systems they need to build strong, scalable businesses.
           </motion.p>
           
           <motion.div 

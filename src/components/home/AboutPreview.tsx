@@ -4,12 +4,12 @@ import { CheckCircle } from 'lucide-react';
 
 const AboutPreview = () => {
   const benefits = [
-    "Expert team with diverse technical skill sets",
-    "Proven track record of successful projects",
-    "Customized solutions for your specific needs",
-    "Ongoing support and maintenance",
-    "Transparent communication throughout the process",
-    "Commitment to innovation and excellence"
+    "Complete business launch support from registration to growth",
+    "Tailored solutions optimized for Sri Lankan SMEs",
+    "Single trusted partner across all business domains",
+    "Affordable and scalable business solutions",
+    "Expert guidance throughout your entrepreneurial journey",
+    "Proven track record of turning startups into success stories"
   ];
 
   return (
@@ -41,14 +41,14 @@ const AboutPreview = () => {
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">Who We Are</h2>
             <div className="mb-6 h-1 w-20 bg-primary-600"></div>
             <p className="mb-6 text-gray-600 dark:text-gray-400">
-              BitLab is a premier IT company dedicated to delivering innovative technological solutions 
-              to businesses of all sizes. With our team of skilled professionals, we strive to provide 
-              exceptional services that drive growth and efficiency.
+              BitLab is your all-in-one business launch, growth, and success partner in Sri Lanka.
+              We empower entrepreneurs with the tools, strategies, and systems they need to build strong, 
+              scalable businesses — from company registration to full digital transformation.
             </p>
             <p className="mb-8 text-gray-600 dark:text-gray-400">
-              Our mission is to empower organizations with cutting-edge technology solutions that 
-              solve complex problems and create lasting value. We combine technical expertise with 
-              industry knowledge to deliver results that exceed expectations.
+              Whether you're just starting out or rapidly scaling, BitLab is designed to simplify your 
+              entrepreneurial journey. We serve as a single, trusted partner offering tailored solutions 
+              across legal, digital, creative, and strategic domains — all optimized for Sri Lankan SMEs.
             </p>
 
             <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2">

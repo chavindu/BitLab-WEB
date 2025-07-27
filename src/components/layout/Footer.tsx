@@ -15,8 +15,8 @@ const Footer = () => {
               <span>BitLab</span>
             </Link>
             <p className="mb-4 text-gray-600 dark:text-gray-400">
-              Bringing innovation through excellence. A premier IT company providing comprehensive
-              solutions for businesses of all sizes.
+              Your all-in-one business launch, growth, and success partner in Sri Lanka. 
+              We make it happen.
             </p>
             <div className="flex space-x-4">
               <a 

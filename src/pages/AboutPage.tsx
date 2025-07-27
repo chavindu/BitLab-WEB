@@ -192,28 +192,28 @@ const AboutPage: React.FC = () => {
           <div className="grid gap-8 md:grid-cols-3">
             {[
               {
-                title: "Technical Expertise",
-                description: "Our team of skilled professionals brings deep knowledge and experience across various technologies and industries."
+                title: "Complete Business Solutions",
+                description: "From company registration to digital transformation, we provide end-to-end solutions for Sri Lankan businesses."
               },
               {
-                title: "Client-Focused Approach",
-                description: "We prioritize understanding your unique needs and challenges to deliver tailored solutions that drive results."
+                title: "SME-Optimized Services",
+                description: "All our solutions are specifically designed and priced for small and medium enterprises in Sri Lanka."
               },
               {
-                title: "Comprehensive Services",
-                description: "From web development to enterprise solutions, we offer end-to-end services to meet all your IT needs."
+                title: "Single Trusted Partner",
+                description: "One partner for all your business needs across legal, digital, creative, and strategic domains."
               },
               {
-                title: "Quality Assurance",
-                description: "We maintain rigorous quality standards to ensure that our solutions are reliable, secure, and performant."
+                title: "Affordable & Scalable",
+                description: "Cost-effective solutions that grow with your business, designed for the Sri Lankan market."
               },
               {
-                title: "Ongoing Support",
-                description: "Our relationship doesn't end at deployment; we provide continuous support to ensure your success."
+                title: "Entrepreneurial Journey Support",
+                description: "We guide you through every stage of your business journey, from startup to scale-up."
               },
               {
-                title: "Innovation Focus",
-                description: "We stay at the forefront of technological advancements to bring innovative solutions to our clients."
+                title: "Proven Success Stories",
+                description: "Track record of turning Sri Lankan startups into thriving businesses across various industries."
               }
             ].map((item, index) => (
               <motion.div 
