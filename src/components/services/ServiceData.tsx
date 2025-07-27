@@ -1,145 +1,159 @@
 import { 
-  Globe, 
-  Server, 
-  Cpu, 
+  FileText, 
+  Building2, 
   PaintBucket, 
+  Globe, 
+  Camera, 
   Megaphone,
+  Billboard,
+  Users,
   Code,
-  Building2,
-  Monitor,
+  Server,
   Cloud,
   Mail,
-  Database
+  Database,
+  Smartphone,
+  Monitor,
+  Search,
+  TrendingUp,
+  MessageSquare,
+  Settings,
+  Briefcase
 } from 'lucide-react';
 
 export const coreServices = [
   {
-    id: "web-development",
-    icon: <Globe className="h-8 w-8 text-primary-600" />,
-    title: "Web Design & Development",
-    description: "Custom, responsive, and user-friendly websites built to meet business goals and drive engagement.",
+    id: "business-registration",
+    icon: <FileText className="h-8 w-8 text-primary-600" />,
+    title: "Business Registration & Documentation",
+    description: "Complete business setup services from registration to brand positioning and trademark checks.",
     features: [
-      "Responsive design for all devices",
-      "Interactive UI/UX design",
-      "Performance optimization",
-      "SEO-friendly structure"
+      "Company Registration (Sole Proprietorship / Partnership / Pvt Ltd)",
+      "BRN, TIN, VAT, EPF/ETF Setup",
+      "Unique Business Name Suggestions",
+      "Basic Trademark & Domain Availability Checks",
+      "Brand Positioning Strategy",
+      "Brand Guidelines",
+      "Tagline & Slogan Development"
     ]
   },
   {
-    id: "web-services",
-    icon: <Server className="h-8 w-8 text-primary-600" />,
-    title: "Web Services",
-    description: "Comprehensive web services to ensure your online presence runs smoothly and securely.",
+    id: "business-planning",
+    icon: <Briefcase className="h-8 w-8 text-primary-600" />,
+    title: "Business Planning & Proposal Writing",
+    description: "Professional business planning services including proposals, pitch decks, and grant research.",
     features: [
-      "Web Hosting",
-      "Domain Management",
-      "Website Maintenance",
-      "WordPress Plugin Development",
-      "Payment Gateway Integration",
-      "API Integration"
+      "Business Profile & Proposal Writing",
+      "Custom Business Plans",
+      "Investor Pitch Decks & Roadmaps",
+      "NGO & CSR Proposal Writing",
+      "Local & International Grant Research",
+      "Budget Planning & Formatting",
+      "NGO/CSR Collaboration Support"
     ]
   },
   {
-    id: "email-management",
-    icon: <Mail className="h-8 w-8 text-primary-600" />,
-    title: "Email Management",
-    description: "Professional email solutions for effective business communication and collaboration.",
-    features: [
-      "Microsoft 365 (O365)",
-      "Google Workspace",
-      "Zoho Mail",
-      "cPanel Email Services",
-      "Email Migration",
-      "SPF/DKIM/DMARC setup"
-    ]
-  },
-  {
-    id: "custom-applications",
-    icon: <Cpu className="h-8 w-8 text-primary-600" />,
-    title: "Custom Applications & Solutions",
-    description: "Tailored software solutions designed specifically for your business needs and workflows.",
-    features: [
-      "Point of Sale Systems",
-      "Restaurant Management",
-      "Hospital Information Systems",
-      "Learning Management Systems (LMS)",
-      "Inventory & Warehouse Management",
-      "Ticketing Systems"
-    ]
-  },
-  {
-    id: "cloud-management",
-    icon: <Cloud className="h-8 w-8 text-primary-600" />,
-    title: "Cloud & Server Management",
-    description: "Expert cloud infrastructure setup and maintenance across all major platforms.",
-    features: [
-      "AWS, Azure, Google Cloud, Oracle Cloud",
-      "Docker, Kubernetes, Terraform, Ansible",
-      "VPS, Private Cloud, Bare-metal Servers",
-      "Cloud migration and optimization"
-    ]
-  },
-  {
-    id: "creative-branding",
+    id: "branding-creative",
     icon: <PaintBucket className="h-8 w-8 text-primary-600" />,
-    title: "Creative & Branding Services",
-    description: "Professional design services to establish and enhance your brand identity.",
+    title: "Branding & Creative Design",
+    description: "Complete brand identity development with creative design solutions for all your business needs.",
     features: [
+      "Logo Design & Brand Kits",
+      "Business Cards & Letterheads",
+      "Product & Packaging Design",
+      "Menus, Flyers, Brochures",
       "UI/UX Design",
-      "Graphic Design",
-      "Logo Design",
-      "Branding & Identity",
-      "Product Design",
-      "Tools: Figma, Adobe XD, Photoshop, Illustrator"
+      "Storyboarding",
+      "Motion Graphics (Intro/Outro)",
+      "360° Brand Identity Development"
     ]
   },
   {
-    id: "marketing",
+    id: "web-app-development",
+    icon: <Globe className="h-8 w-8 text-primary-600" />,
+    title: "Web & App Development",
+    description: "Comprehensive web and mobile application development with custom solutions for every business need.",
+    features: [
+      "Website Design & Development",
+      "Business & Portfolio Websites",
+      "E-commerce Websites (with Payment & Delivery Integration)",
+      "POS Systems (Retail, Restaurants, Hotels, Pharmacies)",
+      "Mobile App Development",
+      "WordPress Development",
+      "Cloud Application Development",
+      "LMS, Inventory, Ticketing Systems",
+      "Custom ERP Solutions (HR, Inventory, Billing)",
+      "Real-time Dashboards & Reporting",
+      "Salesforce Integrations",
+      "AI-based Integrations",
+      "Domain Registration & Web Hosting",
+      "Performance Optimization",
+      "SEO-ready & Mobile Responsive Design",
+      "Training & Tech Support"
+    ]
+  },
+  {
+    id: "photography-videography",
+    icon: <Camera className="h-8 w-8 text-primary-600" />,
+    title: "Photography & Videography",
+    description: "Professional photography and videography services for all your visual content needs.",
+    features: [
+      "Product, Food, Fashion, and Interior Photography",
+      "Store & Catalog Photography",
+      "Seasonal Ad Campaign Shoots",
+      "360° Videography & Photography",
+      "Aerial (Drone) Photography & Videography",
+      "Reels, TikTok, YouTube Shorts",
+      "Commercial Video Productions",
+      "Post-Production (Editing, Subtitles, Effects)"
+    ]
+  },
+  {
+    id: "digital-marketing",
     icon: <Megaphone className="h-8 w-8 text-primary-600" />,
-    title: "Marketing Services",
-    description: "Strategic digital marketing to increase your online visibility and reach your target audience.",
+    title: "Digital Marketing & Advertising",
+    description: "Comprehensive digital marketing strategies to boost your online presence and drive business growth.",
     features: [
-      "SEO, PPC, SEM",
-      "Email Marketing",
-      "Event Marketing & Planning",
+      "Digital Marketing Strategy",
       "Social Media Marketing",
-      "Tools: Google Ads, Meta Ads, Analytics, Semrush, Ahrefs"
+      "SEO Services (Local & Global)",
+      "Email & SMS Marketing",
+      "Content & Blog Writing",
+      "PPC Ad Management (Meta, Google, TikTok, YouTube)",
+      "Search Engine Marketing (SEM)",
+      "E-commerce Marketing",
+      "Lead Generation Campaigns",
+      "Influencer & Affiliate Marketing",
+      "Online Reputation Management (ORM)",
+      "Mobile Marketing",
+      "WhatsApp Business API Setup (Catalogs, Autoresponders)",
+      "Facebook/Instagram Chatbots",
+      "Cross-Border E-commerce Platform Integration",
+      "Monthly Strategy Reports & Analytics"
     ]
   },
   {
-    id: "software-development",
-    icon: <Code className="h-8 w-8 text-primary-600" />,
-    title: "Software Development",
-    description: "Professional development of desktop and mobile applications across multiple platforms.",
+    id: "traditional-advertising",
+    icon: <Billboard className="h-8 w-8 text-primary-600" />,
+    title: "Traditional & Outdoor Advertising",
+    description: "Strategic traditional advertising solutions to maximize your brand visibility in the physical world.",
     features: [
-      "Desktop & Mobile App Development",
-      "Cross-platform Apps (Flutter, React Native)",
-      "Custom SaaS & MIS Solutions",
-      "Agile development methodology"
+      "Campaign & Advertising Management",
+      "LED, Digital, and Gantry Advertising",
+      "Hoardings & Billboard Advertising",
+      "Souvenir Printing"
     ]
   },
   {
-    id: "enterprise-solutions",
-    icon: <Building2 className="h-8 w-8 text-primary-600" />,
-    title: "Enterprise Solutions",
-    description: "Comprehensive enterprise-level solutions to streamline business operations.",
+    id: "crm-automation",
+    icon: <Settings className="h-8 w-8 text-primary-600" />,
+    title: "CRM & Automation",
+    description: "Advanced CRM solutions and automation tools to streamline your business processes and improve efficiency.",
     features: [
-      "CRM Solutions (HubSpot, Zoho CRM, Salesforce)",
-      "ERP Implementation (Odoo, ERPNext, SAP)",
-      "AI / LLM Automation (OpenAI, LangChain, Pinecone)",
-      "Enterprise workflow optimization"
-    ]
-  },
-  {
-    id: "hardware-it",
-    icon: <Monitor className="h-8 w-8 text-primary-600" />,
-    title: "Hardware & IT Infrastructure",
-    description: "Complete hardware solutions and enterprise-grade IT support services.",
-    features: [
-      "Laptops, PCs, Printers & Accessories",
-      "Enterprise-grade IT Support & Services",
-      "Remote Support Tools: AnyDesk, TeamViewer",
-      "Network infrastructure setup"
+      "CRM Setup & Services",
+      "Lead Generation Tools",
+      "WhatsApp & Email Automation",
+      "Sales Funnel Automation"
     ]
   }
 ];
@@ -152,6 +166,8 @@ export const techStack = {
   cloud: ["AWS", "Azure", "GCP", "Oracle Cloud"],
   mobile: ["Flutter", "React Native", "Java", "Swift"],
   devops: ["Docker", "Kubernetes", "cPanel", "GitHub Actions"],
-  design: ["Figma", "Adobe Suite"],
-  marketing: ["Mailchimp", "Google Ads", "Meta Ads", "Analytics"]
+  design: ["Figma", "Adobe Suite", "Photoshop", "Illustrator"],
+  marketing: ["Mailchimp", "Google Ads", "Meta Ads", "Analytics", "Semrush", "Ahrefs"],
+  automation: ["Zapier", "HubSpot", "Salesforce", "WhatsApp Business API"],
+  photography: ["Adobe Lightroom", "Premiere Pro", "After Effects", "Drone Technology"]
 };

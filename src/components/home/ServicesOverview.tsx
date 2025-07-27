@@ -2,63 +2,63 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   Globe, 
-  Server, 
-  Cpu, 
+  FileText,
+  Briefcase,
   PaintBucket, 
+  Camera,
   Megaphone,
-  Code,
-  Building2,
-  Monitor
+  Billboard,
+  Settings
 } from 'lucide-react';
 
 const servicesList = [
   {
-    icon: <Globe className="h-8 w-8 text-primary-600" />,
-    title: "Web Design & Development",
-    description: "Custom, responsive websites built to meet your business goals and drive engagement.",
-    link: "/services#web-development"
+    icon: <FileText className="h-8 w-8 text-primary-600" />,
+    title: "Business Registration & Documentation",
+    description: "Complete business setup from registration to brand positioning and trademark checks.",
+    link: "/services#business-registration"
   },
   {
-    icon: <Cpu className="h-8 w-8 text-primary-600" />,
-    title: "Custom Applications",
-    description: "Tailored software solutions for your specific business needs and workflows.",
-    link: "/services#custom-applications"
-  },
-  {
-    icon: <Server className="h-8 w-8 text-primary-600" />,
-    title: "Cloud & Server Management",
-    description: "Expert cloud infrastructure setup and maintenance across major platforms.",
-    link: "/services#cloud-management"
+    icon: <Briefcase className="h-8 w-8 text-primary-600" />,
+    title: "Business Planning & Proposal Writing",
+    description: "Professional business planning including proposals, pitch decks, and grant research.",
+    link: "/services#business-planning"
   },
   {
     icon: <PaintBucket className="h-8 w-8 text-primary-600" />,
-    title: "Creative & Branding",
-    description: "Professional design services to establish and enhance your brand identity.",
-    link: "/services#creative-branding"
+    title: "Branding & Creative Design",
+    description: "Complete brand identity development with creative design solutions.",
+    link: "/services#branding-creative"
+  },
+  {
+    icon: <Globe className="h-8 w-8 text-primary-600" />,
+    title: "Web & App Development",
+    description: "Comprehensive web and mobile development with custom business solutions.",
+    link: "/services#web-app-development"
+  },
+  {
+    icon: <Camera className="h-8 w-8 text-primary-600" />,
+    title: "Photography & Videography",
+    description: "Professional visual content creation for all your marketing and branding needs.",
+    link: "/services#photography-videography"
   },
   {
     icon: <Megaphone className="h-8 w-8 text-primary-600" />,
-    title: "Marketing Services",
-    description: "Strategic digital marketing to increase your online visibility and reach.",
-    link: "/services#marketing"
+    title: "Digital Marketing & Advertising",
+    description: "Comprehensive digital marketing strategies to boost your online presence.",
+    link: "/services#digital-marketing"
   },
   {
-    icon: <Code className="h-8 w-8 text-primary-600" />,
-    title: "Software Development",
-    description: "Professional development of desktop and mobile applications across platforms.",
-    link: "/services#software-development"
+    icon: <Billboard className="h-8 w-8 text-primary-600" />,
+    title: "Traditional & Outdoor Advertising",
+    description: "Strategic traditional advertising solutions for maximum brand visibility.",
+    link: "/services#traditional-advertising"
   },
   {
-    icon: <Building2 className="h-8 w-8 text-primary-600" />,
-    title: "Enterprise Solutions",
-    description: "Comprehensive CRM and ERP solutions to streamline business operations.",
-    link: "/services#enterprise-solutions"
-  },
-  {
-    icon: <Monitor className="h-8 w-8 text-primary-600" />,
-    title: "Hardware & IT Infrastructure",
-    description: "Complete hardware solutions and enterprise-grade IT support services.",
-    link: "/services#hardware-it"
+    icon: <Settings className="h-8 w-8 text-primary-600" />,
+    title: "CRM & Automation",
+    description: "Advanced CRM solutions and automation tools to streamline business processes.",
+    link: "/services#crm-automation"
   }
 ];
 
