@@ -1,15 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
-  Globe, 
-  FileText,
-  Briefcase,
-  PaintBucket, 
-  Camera,
-  Megaphone,
-  Billboard,
-  Settings
-} from 'lucide-react';
+import { Globe, FileText, Briefcase, PaintBucket, Camera, Megaphone, Keyboard as Billboard, Settings } from 'lucide-react';
 
 const servicesList = [
   {
