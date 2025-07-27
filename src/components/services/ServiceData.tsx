@@ -1,25 +1,4 @@
-import { 
-  FileText, 
-  Building2, 
-  PaintBucket, 
-  Globe, 
-  Camera, 
-  Megaphone,
-  Billboard,
-  Users,
-  Code,
-  Server,
-  Cloud,
-  Mail,
-  Database,
-  Smartphone,
-  Monitor,
-  Search,
-  TrendingUp,
-  MessageSquare,
-  Settings,
-  Briefcase
-} from 'lucide-react';
+import { FileText, Building2, PaintBucket, Globe, Camera, Megaphone, Keyboard as Billboard, Users, Code, Server, Cloud, Mail, Database, Smartphone, Monitor, Search, TrendingUp, MessageSquare, Settings, Briefcase } from 'lucide-react';
 
 export const coreServices = [
   {
