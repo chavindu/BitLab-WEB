@@ -24,9 +24,9 @@ const ServicesPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="masonry-grid">
             {coreServices.map((service, index) => (
-              <div key={service.id} id={service.id}>
+              <div key={service.id} id={service.id} className="masonry-item">
                 <ServiceCard
                   icon={service.icon}
                   title={service.title}
@@ -96,31 +96,52 @@ const ServicesPage: React.FC = () => {
               {[
                 { 
                   title: "Discovery", 
-                  description: "We begin by understanding your business, goals, challenges, and requirements through in-depth consultations." 
+                  description: "We begin by understanding your business, goals, challenges, and requirements through in-depth consultations.",
+                  timeline: "1-2 weeks",
+                  deliverables: "Requirements document, Project scope",
+                  clientInvolvement: "High - Multiple consultation sessions"
                 },
                 { 
                   title: "Planning", 
-                  description: "Based on the discovery phase, we create a detailed plan outlining the scope, timeline, and deliverables." 
+                  description: "Based on the discovery phase, we create a detailed plan outlining the scope, timeline, and deliverables.",
+                  timeline: "1 week",
+                  deliverables: "Project plan, Timeline, Budget breakdown",
+                  clientInvolvement: "Medium - Review and approval"
                 },
                 { 
                   title: "Design", 
-                  description: "Our design team creates wireframes and mockups that align with your brand and business objectives." 
+                  description: "Our design team creates wireframes and mockups that align with your brand and business objectives.",
+                  timeline: "2-3 weeks",
+                  deliverables: "Wireframes, UI/UX designs, Brand guidelines",
+                  clientInvolvement: "High - Design reviews and feedback"
                 },
                 { 
                   title: "Development", 
-                  description: "Our development team brings the designs to life using the latest technologies and best practices." 
+                  description: "Our development team brings the designs to life using the latest technologies and best practices.",
+                  timeline: "4-8 weeks",
+                  deliverables: "Functional prototype, Core features",
+                  clientInvolvement: "Low - Progress updates"
                 },
                 { 
                   title: "Testing", 
-                  description: "Rigorous testing ensures that the solution is bug-free, secure, and performs optimally." 
+                  description: "Rigorous testing ensures that the solution is bug-free, secure, and performs optimally.",
+                  timeline: "1-2 weeks",
+                  deliverables: "Test reports, Performance metrics",
+                  clientInvolvement: "Medium - User acceptance testing"
                 },
                 { 
                   title: "Deployment", 
-                  description: "Once approved, we deploy the solution to production and ensure a smooth transition." 
+                  description: "Once approved, we deploy the solution to production and ensure a smooth transition.",
+                  timeline: "1 week",
+                  deliverables: "Live solution, Deployment documentation",
+                  clientInvolvement: "High - Final approval and training"
                 },
                 { 
                   title: "Support", 
-                  description: "We provide ongoing support and maintenance to ensure that your solution continues to perform at its best." 
+                  description: "We provide ongoing support and maintenance to ensure that your solution continues to perform at its best.",
+                  timeline: "Ongoing",
+                  deliverables: "Support tickets, Updates, Maintenance reports",
+                  clientInvolvement: "Low - Issue reporting"
                 }
               ].map((step, index) => (
                 <motion.div 
@@ -148,7 +169,22 @@ const ServicesPage: React.FC = () => {
                     </div>
                     
                     <h3 className="mb-2 text-xl font-semibold">{step.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400">{step.description}</p>
+                    <p className="mb-3 text-gray-600 dark:text-gray-400">{step.description}</p>
+                    
+                    <div className="space-y-2 text-sm">
+                      <div className="flex items-center gap-2">
+                        <span className="font-medium text-primary-600">Timeline:</span>
+                        <span className="text-gray-700 dark:text-gray-300">{step.timeline}</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="font-medium text-primary-600">Deliverables:</span>
+                        <span className="text-gray-700 dark:text-gray-300">{step.deliverables}</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="font-medium text-primary-600">Your Involvement:</span>
+                        <span className="text-gray-700 dark:text-gray-300">{step.clientInvolvement}</span>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               ))}

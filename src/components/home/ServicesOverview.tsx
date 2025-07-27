@@ -67,7 +67,7 @@ const cardVariants = {
 
 const ServicesOverview = () => {
   return (
-    <section className="section bg-gray-50 dark:bg-gray-800/50">
+    <section className="section bg-gray-50 dark:bg-gray-700 relative border-t-0">
       <div className="container-custom">
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <h2 className="section-title">Our Services</h2>
@@ -80,24 +80,24 @@ const ServicesOverview = () => {
           {servicesList.map((service, index) => (
             <motion.div
               key={service.title}
-              className="card"
+              className="card group hover:shadow-xl transition-all duration-300"
               custom={index}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
               variants={cardVariants}
             >
-              <div className="mb-4 rounded-lg bg-primary-50 p-3 dark:bg-gray-700">
+              <div className="mb-4 rounded-lg bg-primary-50 p-3 dark:bg-gray-700 group-hover:bg-primary-100 dark:group-hover:bg-gray-600 transition-colors duration-300">
                 {service.icon}
               </div>
-              <h3 className="mb-2 text-xl font-semibold">{service.title}</h3>
-              <p className="mb-4 text-gray-600 dark:text-gray-400">{service.description}</p>
+              <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">{service.title}</h3>
+              <p className="mb-4 text-gray-600 dark:text-gray-400 leading-relaxed">{service.description}</p>
               <Link 
                 to={service.link} 
-                className="inline-flex items-center text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                className="inline-flex items-center text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium transition-colors duration-300"
               >
                 Learn more
-                <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                 </svg>
               </Link>

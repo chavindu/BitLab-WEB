@@ -36,37 +36,49 @@ const PortfolioPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 number: "01",
                 title: "Research & Strategy",
-                description: "We start by understanding your business, target audience, and goals to develop a strategic plan."
+                description: "We analyze your business needs, target audience, and project requirements to create a strategic roadmap.",
+                icon: "🎯"
               },
               {
                 number: "02",
                 title: "Design & Development",
-                description: "Our team creates designs and develops solutions using the latest technologies and best practices."
+                description: "Our team crafts user-centered designs and builds robust solutions using cutting-edge technologies.",
+                icon: "⚡"
               },
               {
                 number: "03",
-                title: "Deployment & Support",
-                description: "We ensure smooth deployment and provide ongoing support to keep your solution running optimally."
+                title: "Testing & Quality",
+                description: "Rigorous testing ensures your solution is bug-free, secure, and performs optimally across all devices.",
+                icon: "🔍"
+              },
+              {
+                number: "04",
+                title: "Launch & Support",
+                description: "We handle smooth deployment and provide ongoing maintenance to keep your project running perfectly.",
+                icon: "🚀"
               }
             ].map((step, index) => (
               <motion.div 
                 key={index}
-                className="card flex flex-col items-center text-center"
+                className="card flex flex-col items-center text-center group hover:shadow-lg transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
               >
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-xl font-bold text-primary-700 dark:bg-primary-900/30 dark:text-primary-300">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-2xl group-hover:bg-primary-200 transition-colors duration-300 dark:bg-primary-900/30 dark:group-hover:bg-primary-900/50">
+                  {step.icon}
+                </div>
+                <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-primary-600 text-sm font-bold text-white">
                   {step.number}
                 </div>
                 <h3 className="mb-3 text-xl font-semibold">{step.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{step.description}</p>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{step.description}</p>
               </motion.div>
             ))}
           </div>

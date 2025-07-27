@@ -3,19 +3,21 @@ import HeroSection from '../components/home/HeroSection';
 import ServicesOverview from '../components/home/ServicesOverview';
 import AboutPreview from '../components/home/AboutPreview';
 import PortfolioPreview from '../components/home/PortfolioPreview';
+import PartnersCarousel from '../components/home/PartnersCarousel';
 import TestimonialsSection from '../components/home/TestimonialsSection';
 import ContactCTA from '../components/home/ContactCTA';
 
 const HomePage: React.FC = () => {
   return (
-    <>
+    <div className="min-h-screen">
       <HeroSection />
       <ServicesOverview />
       <AboutPreview />
       <PortfolioPreview />
+      <PartnersCarousel />
       <TestimonialsSection />
       <ContactCTA />
-    </>
+    </div>
   );
 };
 

@@ -4,6 +4,7 @@ import Layout from './components/layout/Layout';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import PortfolioPage from './pages/PortfolioPage';
+import PortfolioDetailPage from './pages/PortfolioDetailPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -76,6 +77,7 @@ function App() {
                 <Route index element={<HomePage />} />
                 <Route path="services" element={<ServicesPage />} />
                 <Route path="portfolio" element={<PortfolioPage />} />
+                <Route path="portfolio/:id" element={<PortfolioDetailPage />} />
                 <Route path="about" element={<AboutPage />} />
                 <Route path="contact" element={<ContactPage />} />
                 <Route path="*" element={<NotFoundPage />} />

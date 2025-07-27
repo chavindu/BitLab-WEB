@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-48 lg:pb-36">
       {/* Background gradient */}
       <div className="absolute inset-0 z-0 bg-hero-pattern"></div>
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent to-white dark:to-gray-900"></div>
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-gray-50 dark:to-gray-700"></div>
 
       {/* Content */}
       <div className="container-custom relative z-20">
@@ -60,7 +60,7 @@ const HeroSection = () => {
           <path 
             fillOpacity="1" 
             d="M0,96L80,85.3C160,75,320,53,480,53.3C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-            className="fill-white dark:fill-gray-900"
+            className="fill-gray-50 dark:fill-gray-700"
           ></path>
         </svg>
       </div>

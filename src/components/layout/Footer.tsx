@@ -117,13 +117,13 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-1 h-5 w-5 flex-shrink-0 text-primary-600" />
                 <a 
-                  href="https://maps.app.goo.gl/5gz2TNAQAPS9njtGA"
+                  href="https://maps.app.goo.gl/PJ2FvhuePrNG3yGD9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
                 >
-                  No 52, Govijana Mawatha,<br />
-                  Wijayapura, Anuradhapura
+                  No 63, Wattegedara Road,<br />
+                  Maharagama
                 </a>
               </li>
               <li className="flex items-center gap-3">

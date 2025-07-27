@@ -34,14 +34,13 @@ const ContactPage: React.FC = () => {
                     <h4 className="font-medium">Address</h4>
                     <p className="text-gray-600 dark:text-gray-400">
                       <a 
-                  href="https://maps.app.goo.gl/5gz2TNAQAPS9njtGA"
+                  href="https://maps.app.goo.gl/VSshuvkhxtJXKdif7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
                 >
-                      No 52, Govijana Mawatha,<br />
-                      Wijayapura,<br />
-                      Anuradhapura</a>
+                      No 63, Wattegedara Road,<br />
+                      Maharagama</a>
                     </p>
                   </div>
                 </div>
@@ -246,14 +245,14 @@ const ContactPage: React.FC = () => {
 
           <div className="overflow-hidden rounded-xl bg-white shadow-md dark:bg-gray-800">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.1083379886863!2d80.40417177474349!3d8.292016300090127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afcf5aae7fca175%3A0xb3ea3786c3f0ea5b!2sBitLab%20(Pvt)%20Ltd!5e0!3m2!1sen!2slk!4v1747394261173!5m2!1sen!2slk" 
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2038.7080413570518!2d79.91916565749365!3d6.849785975521217!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae250787eb6fb7f%3A0x53e9477de33c1b29!2s63%20Wattegedara%20Rd%2C%20Maharagama%2010280!5e0!3m2!1sen!2slk!4v1753643083525!5m2!1sen!2slk" 
               width="100%" 
               height="450" 
               style={{ border: 0 }} 
               allowFullScreen={true} 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              title="BitLab Office Location"
+              title="BitLab Office Location - Maharagama"
             ></iframe>
           </div>
         </div>
